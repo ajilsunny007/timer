@@ -142,52 +142,55 @@
     xmlHttp.open( "GET", "https://cubet.keka.com/k/attendance/api/mytime/attendance/summary", true ); // false for synchronous request
     xmlHttp.setRequestHeader('Authorization', 'Bearer '+token);
     xmlHttp.setRequestHeader('Content-Type', 'application/json');
+    xmlHttp.setRequestHeader('Content-Type', 'application/json');
+    xmlHttp.setRequestHeader('Origin', 'cubet.keka.com');
+    xmlHttp.setRequestHeader('Access-Control-Allow-Origin', 'https://ajilsunny007.github.io');
     xmlHttp.send( null );
     console.log( xmlHttp.responseText);
 
 
 
-fetch('https://cubet.keka.com/k/attendance/api/mytime/attendance/summary', {
-    method: 'GET',
-    headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin':'https://ajilsunny007.github.io',
-        'Origin':'cubet.keka.com'
-    },
-})
-.then(response => {
-    if (!response.ok) {
-        throw new Error('Network response was not ok ' + response.statusText);
-    }
-    return response.json();
-})
-.then(data => {
-    console.log('Response Data:', data);
-})
-.catch(error => {
-    console.error('There was a problem with your fetch operation:', error);
-});
+// fetch('https://cubet.keka.com/k/attendance/api/mytime/attendance/summary', {
+//     method: 'GET',
+//     headers: {
+//         'Authorization': `Bearer ${token}`,
+//         'Content-Type': 'application/json',
+//         'Access-Control-Allow-Origin':'https://ajilsunny007.github.io',
+//         'Origin':'cubet.keka.com'
+//     },
+// })
+// .then(response => {
+//     if (!response.ok) {
+//         throw new Error('Network response was not ok ' + response.statusText);
+//     }
+//     return response.json();
+// })
+// .then(data => {
+//     console.log('Response Data:', data);
+// })
+// .catch(error => {
+//     console.error('There was a problem with your fetch operation:', error);
+// });
 
 
-      const xhr = new XMLHttpRequest();
-      xhr.open(
-        "GET",
-        "https://cubet.keka.com/k/attendance/api/mytime/attendance/summary",
-        true
-      );
-      xhr.setRequestHeader("Authorization", `Bearer ${token}`);
-      xhr.setRequestHeader("Content-Type", "application/json");
+//       const xhr = new XMLHttpRequest();
+//       xhr.open(
+//         "GET",
+//         "https://cubet.keka.com/k/attendance/api/mytime/attendance/summary",
+//         true
+//       );
+//       xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+//       xhr.setRequestHeader("Content-Type", "application/json");
   
-      xhr.onload = function () {
-        if (xhr.status >= 200 && xhr.status < 300) {
-          const response = JSON.parse(xhr.responseText);
-          console.log("Data:", response);
-        } else {
-          console.error("Request failed with status:", xhr.status);
-        }
-      };
-    });
+//       xhr.onload = function () {
+//         if (xhr.status >= 200 && xhr.status < 300) {
+//           const response = JSON.parse(xhr.responseText);
+//           console.log("Data:", response);
+//         } else {
+//           console.error("Request failed with status:", xhr.status);
+//         }
+//       };
+//     });
   </script>
 </html>
 
