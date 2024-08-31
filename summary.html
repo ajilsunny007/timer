@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+/>
+<link
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<style>
+  body {
+    background-color: #000 !important;
+    margin-top: 15%;
+  }
+  .card-counter {
+    box-shadow: 2px 2px 10px #dadada;
+    margin: 5px;
+    padding: 20px 10px;
+    background-color: #fff;
+    height: 100px;
+    border-radius: 5px;
+    transition: 0.3s linear all;
+  }
+
+  .card-counter:hover {
+    box-shadow: 4px 4px 20px #dadada;
+    transition: 0.3s linear all;
+  }
+
+  .card-counter.primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .card-counter.danger {
+    background-color: #ef5350;
+    color: #fff;
+  }
+
+  .card-counter.success {
+    background-color: #66bb6a;
+    color: #fff;
+  }
+
+  .card-counter.info {
+    background-color: #26c6da;
+    color: #fff;
+  }
+
+  .card-counter i {
+    font-size: 5em;
+    opacity: 0.2;
+  }
+
+  .card-counter .count-numbers {
+    position: absolute;
+    right: 35px;
+    top: 20px;
+    font-size: 32px;
+    display: block;
+  }
+
+  .card-counter .count-name {
+    position: absolute;
+    right: 35px;
+    top: 65px;
+    font-style: italic;
+    text-transform: capitalize;
+    /* opacity: 0.5; */
+    display: block;
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-12 my-2">
+            <div class="card-counter primary">
+              <i class="fa fa-code-fork"></i>
+              <span class="count-numbers">12</span>
+              <span class="count-name">Total Effective Hours in day</span>
+            </div>
+          </div>
+      
+          <div class="col-md-4 col-12 my-2">
+            <div class="card-counter danger">
+              <i class="fa fa-ticket"></i>
+              <span class="count-numbers">599</span>
+              <span class="count-name">Total Effective Hours in week</span>
+            </div>
+          </div>
+      
+          <div class="col-md-4 col-12 my-2">
+            <div class="card-counter success">
+              <i class="fa fa-database"></i>
+              <span class="count-numbers">6875</span>
+              <span class="count-name">Average Effective Hours in week</span>
+            </div>
+          </div>
+      
+          <div class="col-md-4 col-12 my-2">
+            <div class="card-counter info">
+              <i class="fa fa-users"></i>
+              <span class="count-numbers">35</span>
+              <span class="count-name">Today clockout time</span>
+            </div>
+          </div>
+      
+          <div class="col-md-4 col-12 my-2">
+            <div class="card-counter primary">
+              <i class="fa fa-code-fork"></i>
+              <span class="count-numbers">12</span>
+              <span class="count-name">Today punch in Time</span>
+            </div>
+          </div>
+      
+          <div class="col-md-4 col-12 my-2">
+            <div class="card-counter danger">
+              <i class="fa fa-ticket"></i>
+              <span class="count-numbers">599</span>
+              <span class="count-name">Last punch in time</span>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+      // Retrieve stored values
+      // const token_value = localStorage.getItem('token');
+      const token =
+        "eyJhbGciOiJSUzI1NiIsImtpZCI6IjFBRjQzNjk5RUE0NDlDNkNCRUU3NDZFMjhDODM5NUIyMEE0MUNFMTgiLCJ4NXQiOiJHdlEybWVwRW5HeS01MGJpaklPVnNncEJ6aGciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FwcC5rZWthLmNvbSIsIm5iZiI6MTcyNTAyOTc3OCwiaWF0IjoxNzI1MDI5Nzc4LCJleHAiOjE3MjUxMTYxNzgsImF1ZCI6WyJrZWthaHIuYXBpIiwiaGlyby5hcGkiLCJodHRwczovL2FwcC5rZWthLmNvbS9yZXNvdXJjZXMiXSwic2NvcGUiOlsib3BlbmlkIiwia2VrYWhyLmFwaSIsImhpcm8uYXBpIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdLCJjbGllbnRfaWQiOiI5ODdjYzk3MS1mYzIyLTQ0NTQtOTlmOS0xNmMwNzhmYTdmZjYiLCJzdWIiOiIzZDkzNzRlYy1hNTQzLTQwZTMtODg5OS1jYmE0NWY4Nzg0MGQiLCJhdXRoX3RpbWUiOjE3MjUwMjk3NzMsImlkcCI6ImxvY2FsIiwidGVuYW50X2lkIjoiOWM4ZDVmZmItZTYyOC00NTQ3LWIzNDMtMWRhZTIyOGZkMzFhIiwidGVuYW50aWQiOiI5YzhkNWZmYi1lNjI4LTQ1NDctYjM0My0xZGFlMjI4ZmQzMWEiLCJzdWJkb21haW4iOiJjdWJldC5rZWthLmNvbSIsInVzZXJfaWQiOiJiNGU1MWNlZC1hNTE0LTQyZmItOGVjNS0zYWY5ZGEzMTAyMDgiLCJ1c2VyX2lkZW50aWZpZXIiOiJiNGU1MWNlZC1hNTE0LTQyZmItOGVjNS0zYWY5ZGEzMTAyMDgiLCJ1c2VybmFtZSI6ImFqaWwuc3VubnlAY3ViZXR0ZWNoLmNvbSIsImVtYWlsIjoiYWppbC5zdW5ueUBjdWJldHRlY2guY29tIiwiYXV0aGVudGljYXRpb25fdHlwZSI6IjUiLCJzaWQiOiI0NzY4ODNGQkI5OUVFMUE0QkYyMzY1MzEyMTFGOEU0OSIsImp0aSI6IjhGQkZBNzRGQjUyOUZEQTQyMjdDRDkyNTAzNTIwOENBIn0.Q3j-ObJuzrnng9xSZJWS81ly9pXCpQl_2BnR7SGxlWMhdD-_spDcCUjIiLzKLutys3SkIAC_bLly2Hjnw7W5dCsLdsDnFq-CVGvq1UUA8lxaOvTvEs9VEEdlHtr1dIZtmEMBBZIkazdcYmmRSgiUWOm3xwwu5koObaAkGI6X_K1AlZXk6qqy4UpBWA3cxSCh3DC2B1NMnw2qzSjM9ZsYZ3ha8m4QNBVeO35rG_NtONhuKjVFMXSnJkEOtDM6oI-xsnNO0W83OBSisBPJYvozF0RnkeZ0AejMehjufA6tcbGtN3Wqv89_KrS4xv4M3C89vP_TiH_zUpzflr2Q6L9R6g";
+
+        var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", "https://cubet.keka.com/k/attendance/api/mytime/attendance/summary", true ); // false for synchronous request
+    xmlHttp.setRequestHeader('Authorization', 'Bearer '+token);
+    xmlHttp.setRequestHeader('Content-Type', 'application/json');
+    xmlHttp.send( null );
+    console.log( xmlHttp.responseText);
+
+
+
+fetch('https://cubet.keka.com/k/attendance/api/mytime/attendance/summary', {
+    method: 'GET',
+    headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin':'localhost',
+        'Sec-Fetch-Site':'same-origin'
+    },
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+    }
+    return response.json();
+})
+.then(data => {
+    console.log('Response Data:', data);
+})
+.catch(error => {
+    console.error('There was a problem with your fetch operation:', error);
+});
+
+
+      const xhr = new XMLHttpRequest();
+      xhr.open(
+        "GET",
+        "https://cubet.keka.com/k/attendance/api/mytime/attendance/summary",
+        true
+      );
+      xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+      xhr.setRequestHeader("Content-Type", "application/json");
+  
+      xhr.onload = function () {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          const response = JSON.parse(xhr.responseText);
+          console.log("Data:", response);
+        } else {
+          console.error("Request failed with status:", xhr.status);
+        }
+      };
+    });
+  </script>
+</html>
+
+
+
+
+
