@@ -153,7 +153,7 @@ fetch('https://cubet.keka.com/k/attendance/api/mytime/attendance/summary', {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin':'localhost',
-        'Sec-Fetch-Site':'same-origin'
+        'Origin':'cubet.keka.com'
     },
 })
 .then(response => {
